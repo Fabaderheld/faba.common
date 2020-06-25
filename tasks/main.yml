@@ -1,7 +1,7 @@
 ---
 # tasks file for common
-  - name: "Include Distro specific vars"
-    include_vars: "{{ inventory_dir }}/vars/distros/{{ ansible_lsb.id }}.yml"
+  # - name: "Include Distro specific vars"
+  #   include_vars: "{{ inventory_dir }}/vars/distros/{{ ansible_lsb.id }}.yml"
     # with_first_found:
     #   files:
     #     - "{{ inventory_dir }}/vars/distros/{{ ansible_lsb.id }}.yml"
