@@ -1,0 +1,15 @@
+---
+
+packages:
+    - ncdu
+    - vim
+    - curl
+    - screen
+    - git
+    - wget
+    - sudo
+    - htop
+    - cifs-utils
+    - zsh
+    - davfs2
+    - keychain

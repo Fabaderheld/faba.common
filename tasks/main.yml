@@ -1,0 +1,23 @@
+---
+# tasks file for common
+  - name: "Include Distro specific vars"
+    include_vars: "{{ inventory_dir }}/vars/distros/{{ ansible_lsb.id }}.yml"
+    # with_first_found:
+    #   files:
+    #     - "{{ inventory_dir }}/vars/distros/{{ ansible_lsb.id }}.yml"
+
+  - name: "Install packages"
+    apt:
+      package: "{{ packages }}"
+      state: present
+
+  - name: "Remove Puppet agent"
+    apt:
+      package: "puppet-agent"
+      state: absent
+
+  - name: "Install VMWare-Tools"
+    apt:
+      package: "open-vm-tools"
+      state: present
+    when: ansible_virtualization_type == 'VMware'
