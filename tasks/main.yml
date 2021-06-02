@@ -8,8 +8,9 @@
 
   - name: "Install packages"
     apt:
-      package: "{{ packages }}"
+      package: "{{ item }}"
       state: present
+    with_items: "{{ packages }}"
 
   - name: "Remove Puppet agent"
     apt:
